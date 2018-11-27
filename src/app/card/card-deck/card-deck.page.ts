@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CardService } from '../shared/card.service';
 
+import { CardDeck } from '../shared/card.model';
+
 @Component({
     selector: 'app-card-deck',
     templateUrl: './card-deck.page.html',
@@ -8,14 +10,21 @@ import { CardService } from '../shared/card.service';
 })
 export class CardDeckPage {
 
+    private readonly ALLOWED_DECKS = ['classes', 'factions', 'qualities', 'types', 'races'];
+    public cardDecks: CardDeck[] = [];
+
     constructor(private cardService: CardService) {
         this.getCardDecks();
     }
 
-    public cardDecks: string[] = [];
+
 
     private getCardDecks() {
         this.cardService.getAllCardDecks().subscribe(
-            (cardDecks: string[]) => this.cardDecks = cardDecks);
+            (cardDecks: CardDeck[]) => this.extractAllowedDecks(cardDecks));
         }
+
+    extractAllowedDecks(cardDecks: CardDeck[]) {
+        this.ALLOWED_DECKS.forEach((deckName: string) => this.cardDecks.push({name: deckName, types: cardDecks[deckName]}));
     }
+}
