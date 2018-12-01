@@ -27,4 +27,8 @@ export class CardDeckPage {
     extractAllowedDecks(cardDecks: CardDeck[]) {
         this.ALLOWED_DECKS.forEach((deckName: string) => this.cardDecks.push({name: deckName, types: cardDecks[deckName]}));
     }
+
+    generateURL(cardDeckGroup: string, cardDeck: string): string {
+        return`/tabs/(card:card/${cardDeckGroup}/${cardDeck})`;
+    }
 }
