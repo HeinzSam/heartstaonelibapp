@@ -24,6 +24,10 @@ export class CardDetailPage {
       });
   }
 
+  updateImage() {
+    this.card.img = '../../assets/images/DefaultCard';
+  }
+
 
 
 }

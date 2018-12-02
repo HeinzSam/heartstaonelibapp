@@ -1,18 +1,19 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>card-detail</ion-title>
+    <ion-title>{{card?.name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding *ngIf="card.CardId">
+<ion-content padding *ngIf="card && card.cardId">
 <ion-card>
-  <ion-img src={{card?.img}}></ion-img>
+  <ion-img src={{card?.img}} (error)="updateImage($event)"></ion-img>
   <ion-card-header>
       <ion-card-title>{{card.name}}</ion-card-title>
   </ion-card-header>
   <ion-card-content>
-      <p>{{card.text}}</p>
-      
+      <p>{{card?.text}}</p>
+      <p>{{card?.flavor}}</p>
+
   </ion-card-content>
 </ion-card>
 
