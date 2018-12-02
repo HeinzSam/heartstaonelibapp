@@ -25,5 +25,5 @@ export class CardListingPage {
        (cards: Card[]) => {
          this.cards = cards;
        });
-    }
+      }
 }

@@ -11,6 +11,8 @@ import { CardListComponent } from './components/card-list.component';
 
 import { CardListingPage } from './card-listing/card-listing.page';
 
+import { CardDetailPage } from './card-detail/card-detail.page';
+
 @NgModule({
     imports: [
         IonicModule,
@@ -23,7 +25,8 @@ import { CardListingPage } from './card-listing/card-listing.page';
     declarations: [
         CardDeckPage,
         CardListComponent,
-        CardListingPage
+        CardListingPage,
+        CardDetailPage
     ]
 })
 export class CardPageModule {}

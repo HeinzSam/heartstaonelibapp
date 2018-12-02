@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>card-detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding *ngIf="card.CardId">
+<ion-card>
+  <ion-img src={{card?.img}}></ion-img>
+  <ion-card-header>
+      <ion-card-title>{{card.name}}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+      <p>{{card.text}}</p>
+      
+  </ion-card-content>
+</ion-card>
+
+
+
+
+</ion-content>
