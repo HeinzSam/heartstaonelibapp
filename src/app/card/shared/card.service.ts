@@ -8,7 +8,7 @@ import { CardDeck, Card } from './card.model';
 @Injectable()
 export class CardService {
     private readonly HS_API_URL = 'https://omgvamp-hearthstone-v1.p.mashape.com';
-    private readonly API_KEY = 'ZUAlOZyTFvmsh74J24mnu7owu10Mp1ZEc5Ujsnlq1XIB39Fu0W';
+    private readonly API_KEY = '9vW5JqP4jKmshaNFjRnwPLpSWJxrp1eGNRNjsnFM5vhWmvW7HT';
     private headers: HttpHeaders;
 
     constructor( private http: HttpClient) {
